@@ -1,0 +1,314 @@
+/* General */
+* {
+    box-sizing: border-box;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', sans-serif;
+    background: #eafaf1;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Main content should take remaining height */
+main, .content {
+    flex: 1;
+}
+
+/* Header & Footer */
+.header, .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #008f5a;
+    color: white;
+}
+
+.footer {
+    background: #008f5a;
+    color: white;
+    padding: 15px 30px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    width: 100%;
+}
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    background-color: #2ecc71;
+    border: none;
+    color: rgb(247, 254, 41);
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+}
+.button-container {
+    display: flex;
+    flex-direction: row; /* Stack the buttons vertically */
+    gap: 20px; /* Add space between the buttons */
+}
+
+button:hover {
+    background-color: #27ae60;
+}
+.signup-top-right {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: -10px;
+}
+
+.signup-top-right a {
+    font-size: 14px;
+    color: #2ecc71;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-top-right a:hover {
+    text-decoration: underline;
+}
+
+
+/* Forms */
+form {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 50px;
+    max-width: 600px;
+    margin: 60px auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+form h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input, select, textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+a button {
+    margin-bottom: 20px;
+    text-align: center !important;
+    width: auto;
+}
+
+/* Landing Page */
+body.landing-page {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden; /* ✅ hides horizontal scrollbar */
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.landing-bg {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.landing-bg img.bg-img {
+    width: 120%;
+    height: 120%;
+    object-fit: cover;
+    transform: scale(1);
+    animation: zoomIn 2s forwards;
+}
+
+@keyframes zoomIn {
+    to { transform: scale(1.1); }
+}
+
+.slogan {
+    position: absolute;
+    top: 12%;
+    left: 47%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 60px;
+    font-weight: bold;
+    text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.5);
+    animation: slideDown 1.5s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translate(-50%, -50%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, 0%);
+        opacity: 1;
+    }
+}
+
+.landing-content {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    z-index: 5;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.landing-buttons button {
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    margin-bottom: 10px;
+    animation: slideLeft 1s ease-out forwards;
+    opacity: 0;
+}
+
+.landing-buttons button:nth-child(1) { animation-delay: 1s; }
+.landing-buttons button:nth-child(2) { animation-delay: 1.5s; }
+.landing-buttons button:nth-child(3) { animation-delay: 2s; }
+
+@keyframes slideLeft {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Slide-in doctor/nurse */
+.slide-image-right,
+.slide-image-left {
+    position: absolute;
+    width: 250px;
+    bottom: 0;
+    z-index: 3;
+    opacity: 0;
+}
+
+.slide-image-right {
+    right: 0%;
+    width: 727.63px;
+    height: 727.63px;
+    animation: slideUpRight 2s ease-out forwards;
+}
+
+.slide-image-left {
+    left: 55%;
+    width: 1080px;
+    height: 720px;
+    animation: slideUpLeft 2s ease-out forwards;
+    animation-delay: 1.5s;
+}
+
+@keyframes slideUpRight {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUpLeft {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f9fb;
+}
+
+form {
+    background-color: rgb(251, 218, 250);
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    gap: 10px;
+}
+
+form h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+    text-align: center;
+}
+
+form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.form-buttons {
+    display: flex;
+    gap: 10px; /* Adds space between buttons */
+}
+
+form button {
+    width: 40% auto;
+    padding: 10px;
+    margin: 30;
+    display: flex;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    white-space: nowrap;
+    gap: 10px;
+}
+
+form button:hover {
+    background-color: #27ae60;
+}
+
+form .error {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+/* Utility */
+.hidden {
+    display: none !important;
+}
